@@ -1,0 +1,92 @@
+{
+	"freedom": {
+		"availability": ["monday", "thursday"],
+		"characters": ["aloy", "amber", "barbara", "diona", "klee", "sucrose", "tartaglia"],
+		"nation": "mondstat"
+	},
+	"resistance": {
+		"availability":	["tuesday", "friday"],
+		"characters": ["bennett", "diluc", "eula", "jean", "mona", "noelle", "razor"],
+		"nation": "mondstat"
+	},
+	"ballad": {
+		"availability": ["wednesday", "saturday"],
+		"characters": ["albedo", "fischl", "kaeya", "lisa", "mika", "rosaria", "venti"],
+		"nation": "mondstat"
+	},
+	"prosperity": {
+		"availability": ["monday", "thursday"],
+		"characters": ["gaming", "keqing", "ningguang", "qiqi", "shenhe", "xiao", "yelan"],
+		"nation": "liyue"
+	},
+	"diligence": {
+		"availability": ["tuesday", "friday"],
+		"characters": ["chongyun", "ganyu", "hu tao", "kazuha", "xiangling", "yaoyao", "yun jin"],
+		"nation": "liyue"
+	},
+	"gold": {
+		"availability": ["wednesday", "saturday"],
+		"characters": ["baizhu", "beidou", "xianyun", "xingqiu", "xinyan", "yanfei", "zhongli"],
+		"nation": "liyue"
+	},
+	"transience": {
+		"availability": ["monday", "thursday"],
+		"characters": ["kirara", "kokomi", "heizou", "thoma", "yoimiya"],
+		"nation": "inazuma"
+	},
+	"elegance": {
+		"availability": ["tuesday", "friday"],
+		"characters": ["itto", "ayaka", "ayato", "kujou sara", "kuki shinobu"],
+		"nation": "inazuma"
+	},
+	"light": {
+		"availability": ["wednesday", "saturday"],
+		"characters": ["chiori", "gorou", "raiden shogun", "sayu", "yae miko", "yae"],
+		"nation": "inazuma"
+	},
+	"admonition": {
+		"availability": ["monday", "thursday"],
+		"characters": ["candace", "cyno", "faruzan", "tighnari"],
+		"nation": "sumeru"
+	},
+	"ingenuity": {
+		"availability": ["tuesday", "friday"],
+		"characters": ["alhaitham", "dori", "kaveh", "layla", "nahida"],
+		"nation": "sumeru"
+	},
+	"praxis": {
+		"availability": ["wednesday", "saturday"],
+		"characters": ["collei", "dehya", "nilou", "sethos", "wanderer"],
+		"nation": "sumeru"
+	},
+	"equity": {
+		"availability": ["monday", "thursday"],
+		"characters": ["lyney", "navia", "neuvillette", "sigewinne"],
+		"nation": "fontaine"
+	},
+	"justice": {
+		"availability": ["tuesday", "friday"],
+		"characters": ["charlotte", "clorinde", "freminet", "furina"],
+		"nation": "fontaine"
+	},
+	"order": {
+		"availability": ["wednesday", "saturday"],
+		"characters": ["arlecchino", "chevreuse", "emilie", "lynette", "wriothesley"],
+		"nation": "fontaine"
+	},
+	"contention": {
+		"availability": ["monday", "thursday"],
+		"characters": ["mualani"],
+		"nation": "natlan"
+	},
+	"kindling": {
+		"availability": ["tuesday", "friday"],
+		"characters": ["kinich"],
+		"nation": "natlan"
+	},
+	"conflict": {
+		"availability": ["wednesday", "friday"],
+		"characters": ["kachina"],
+		"nation": "natlan"
+	}
+}

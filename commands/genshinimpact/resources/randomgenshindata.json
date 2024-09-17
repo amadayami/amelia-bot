@@ -1,0 +1,43 @@
+{
+	"worldBosses": 
+		[
+		"anemo hypostatis", "electro hypostasis", "cryo regisvine", "cryo regisvine",
+		"geo hypostasis", "pyro regisvine", "rhodeia of loch", "primo geovishap", "ruin serpent", "solitary suanni",
+		"maguu kenki", "perpetual mechanical array", "pyro hypostasis", "hydro hypostasis", "thunder manifestation", "golden wolflord", "coral defenders",
+		"jadeplume terrorshroom", "electro regisvine", "aeonblight drake", "algorithm of SIMON", "dendro hypostasis", "setekh wenut", "iniquitous baptist",
+		"icewind suite: coppelia", "icewind suite: coppelius", "emperor of fire and iron", "millennial pearl seahorse", "experimental field generator", "hydro tulpa", "statue of marble and brass",
+		"holawaqa ngoubou", "kongamato"
+		],
+	"trounceDomains": 
+		["andrius", "stormterror dvalin", "childe", "azhdaha", "la signora",
+		"magatsu mitake narukami no mikoto", "everlasting lord of arcane wisdom",
+		"guardian of apep's oasis", "all-devouring narwhal", "the knave"],
+	"elements": ["anemo", "geo", "electro", "dendro", "hydro", "pyro", "cryo"],
+	"weapons": ["catalyst", "claymore", "sword", "bow", "polearm"],
+	"characters": 
+		[
+		"albedo", "alhaitham", "aloy", "amber", "arlecchino", "ayaka", "ayato",
+		"baizhu", "barbara", "beidou", "bennett",
+		"candace", "charlotte", "chevreuse", "childe", "chiori", "chongyun", "clorinde", "collei", "cyno",
+		"dehya", "diluc", "diona", "dori",
+		"emilie", "eula",
+		"faruzan", "fischl", "freminet", "furina",
+		"gaming", "ganyu", "gorou",
+		"heizou", "hu tao",
+		"itto",
+		"jean",
+		"kachina", "kazuha", "kaeya", "kaveh", "keqing", "kirara", "klee", "kokomi", "kuki",
+		"layla", "lisa", "lynette", "lyney",
+		"mika", "mona", "mualani",
+		"nahida", "navia", "neuvillette", "nilou", "ningguang", "noelle",
+		"qiqi",
+		"raiden", "razor", "rosaria",
+		"sara", "sayu", "sethos", "shenhe", "sigewinne", "sucrose",
+		"thoma", "tighnari", "traveler",
+		"venti",
+		"wanderer", "wriothesley",
+		"xiangling", "xianyun", "xiao", "xingqiu", "xinyan",
+		"yae miko", "yanfei", "yaoyao", "yelan", "yoimiya", "yunjin",
+		"zhongli"
+		]
+}
