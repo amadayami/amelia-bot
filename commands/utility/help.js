@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 function createHelpEmbed(){
 	const helpEmbed = new EmbedBuilder()
 		.setTitle('Commands List')
-		.setDescription('Everything your werewolf boyfriend can do <3')
+		.setDescription('Everything I can do!')
 		.addFields(
 			{ name: '/cat', value; 'Gets a random gif of a cat' },
 			{ name: '/countdown', value: 'Creates a countdown to an event' },

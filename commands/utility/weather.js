@@ -132,7 +132,19 @@ module.exports = {
 			
 	async execute(interaction) {
 		const loca = interaction.options.getString('location');
+		
+		if(!loca.includes(',')){
+			await interaction.reply({ content: "improper format :(", ephemeral: true });
+			return;
+		}
 		let args = loca.split(',');
+		
+		console.log("weather args provided: " + args);
+		if(args[0] === undefined || args[1] === undefined){
+			await interaction.reply({ content: "missing location information :(", ephemeral: true });
+			return;
+		}
+		
 		let wsRegex = /^\s+|\s+$/g;
 		for(let i = 0; i < args.length; i++){
 			args[i] = args[i].replace(wsRegex, "");

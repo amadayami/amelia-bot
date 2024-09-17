@@ -23,10 +23,12 @@ function unixToRelative(timestamp){
 function checkCDs(name){
 	let data = fs.readFileSync('./commands/utility/resources/countdowns.json');
 	let countdowns = JSON.parse(data);
-	if(name in countdowns){
-		return countdowns[name];
+	for (const [key, value] of Object.entries(countdowns)){
+		if( name.toLowerCase() === key.toLowerCase() ){
+			return countdowns[key];
+		}
 	}
-	else return 0;
+	return 0;
 }
 
 function updateCDs(name, timestamp){

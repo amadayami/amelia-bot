@@ -12,6 +12,19 @@ function checkCDs(name){
 	else return 0;
 }
 
+function removeOldCDs(){
+	let rawdata = fs.readFileSync('./commands/utility/resources/countdowns.json');
+	let countdowns = JSON.parse(rawdata);
+	for (const [key, value] of Object.entries(countdowns)){
+		if(value < Math.floor(Date.now()/1000)){
+			delete countdowns[key];
+		}
+	}
+	let updata = JSON.stringify(countdowns);
+	console.log("typeof updata: \n" + updata);
+	fs.writeFileSync('./commands/utility/resources/countdowns.json', updata);
+}
+
 function removeCD(name){
 	let rawdata = fs.readFileSync('./commands/utility/resources/countdowns.json');
 	let countdowns = JSON.parse(rawdata);
