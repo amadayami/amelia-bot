@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ComponentType } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 
 function createCDEmbed(title, timestamp){
@@ -56,6 +56,10 @@ module.exports = {
 			
 	async execute(interaction) {
 		let cdName = interaction.options.getString('cdname');
+		if(cdName === "old"){
+			await interaction.reply({ content: "old is a special keyword, please use a different name", ephemeral: true });
+			return;
+		}
 		let timestamp = await checkCDs(cdName);
 		if(timestamp !== 0){
 			await interaction.reply({ embeds: [createCDEmbed(cdName, timestamp)] });

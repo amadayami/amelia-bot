@@ -36,12 +36,12 @@
 	},
 	"elegance": {
 		"availability": ["tuesday", "friday"],
-		"characters": ["itto", "ayaka", "ayato", "kujou sara", "kuki shinobu"],
+		"characters": ["arataki itto", "ayaka", "ayato", "kujou sara", "kuki shinobu"],
 		"nation": "inazuma"
 	},
 	"light": {
 		"availability": ["wednesday", "saturday"],
-		"characters": ["chiori", "gorou", "raiden shogun", "sayu", "yae miko", "yae"],
+		"characters": ["chiori", "gorou", "raiden shogun", "sayu", "yae miko"],
 		"nation": "inazuma"
 	},
 	"admonition": {

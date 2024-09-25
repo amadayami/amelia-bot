@@ -1,15 +1,14 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 function translate(phrase){
-	
-	let translated = phrase + " translates to \"";
+	let translated = '';
 	let toTranslateArr = phrase.split(' ');
 	console.log(toTranslateArr);
 	for(let i = 0; i < toTranslateArr.length; i++){
-		translated += translateWord(toTranslateArr[i]) + " ";
+		translated += translateWord(toTranslateArr[i]);
+		if(i != toTranslateArr.length - 1) translated += " ";
 	}
-	translated += "\"";
-	return translated;
+	return `"${phrase}" translates to "${translated}"`;
 }
 
 function translateWord(word){

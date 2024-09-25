@@ -75,6 +75,10 @@ module.exports = {
 				}
 			});
 		}
+		else if(cdName === "old"){
+			removeOldCDs();
+			await interaction.reply({ content: "removed old countdowns from list", ephemeral: true });
+		}
 		else{
 			await interaction.reply({ content: "countdown not found", ephemeral: true });
 		}
