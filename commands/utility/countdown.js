@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
+const countdownsfile = './resources/countdowns.json'
 
 function createCDEmbed(title, timestamp){
 	let timeUntil = unixToRelative(timestamp);
@@ -21,7 +22,7 @@ function unixToRelative(timestamp){
 }
 
 function checkCDs(name){
-	let data = fs.readFileSync('./commands/utility/resources/countdowns.json');
+	let data = fs.readFileSync(countdownsfile);
 	let countdowns = JSON.parse(data);
 	for (const [key, value] of Object.entries(countdowns)){
 		if( name.toLowerCase() === key.toLowerCase() ){
@@ -32,11 +33,11 @@ function checkCDs(name){
 }
 
 function updateCDs(name, timestamp){
-	let rawdata = fs.readFileSync('./commands/utility/resources/countdowns.json');
+	let rawdata = fs.readFileSync(countdownsfile);
 	let countdowns = JSON.parse(rawdata);
 	countdowns[name] = timestamp;
 	let updata = JSON.stringify(countdowns);
-	fs.writeFileSync('./commands/utility/resources/countdowns.json', updata);
+	fs.writeFileSync(countdownsfile, updata);
 }
 
 function getTimestamp(date){

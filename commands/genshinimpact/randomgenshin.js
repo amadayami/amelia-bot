@@ -1,9 +1,10 @@
 const { SlashCommandBuilder, EmbedBuilder, ComponentType } = require('discord.js');
 const fs = require('fs');
+const rgfile = './resources/randomgenshindata.json';
 
 function createRandomEmbed(){
 	let icon = `https://static.wikia.nocookie.net/gensin-impact/images/d/d6/Icon_Emoji_Paimon%27s_Paintings_13_Raiden_Shogun_2.png/revision/latest?cb=20220311050453`;
-	let rawdata = fs.readFileSync('./commands/utility/resources/randomgenshindata.json');
+	let rawdata = fs.readFileSync(rgfile);
 	let data = JSON.parse(rawdata);
 	
 	let worldBoss = getElement(data["worldBosses"]);

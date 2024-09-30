@@ -3,7 +3,7 @@ const fs = require('fs');
 const natlanTimestamp = 1724814000;
 const twentyonedays = 86400*21;
 const fortytwodays = 86400*42;
-const { versionNum, patchNum, currentPatch } = require('./resources/genshindata.json');
+const { versionNum, patchNum, currentPatch } = require('../../resources/genshindata.json');
 
 const characterImages = [
 	"https://static.wikia.nocookie.net/gensin-impact/images/7/7e/Icon_Emoji_Paimon%27s_Paintings_31_Rosaria_1.png/revision/latest?cb=20240412042827",
@@ -20,7 +20,6 @@ const characterImages = [
 ]
 function createEmbed(currentTimestamp){
 	let [v,p,c] = getGenshinPatch(currentTimestamp);
-	console.log(`${v}.${p} ${c}`);
 	let half = getHalf(currentTimestamp, c);
 	if(half === 1) half = "1st";
 	else half = "2nd";
@@ -30,7 +29,6 @@ function createEmbed(currentTimestamp){
 		pNext =- 9;
 		vNext++;
 	}
-	console.log("c: " + c);
 	let nextPatchTimestamp = (c+fortytwodays) + addOffset(c+fortytwodays);
 	let timeUntil = unixToRelative(nextPatchTimestamp, currentTimestamp);
 	const genshEmbed = new EmbedBuilder()
@@ -124,7 +122,7 @@ module.exports = {
 	async execute(interaction) {
 		const currentTimestamp = Math.floor((Date.now())/1000);
 		console.log([versionNum, patchNum, currentPatch]);
-		console.log(getGenshinPatch(currentTimestamp));
+		(getGenshinPatch(currentTimestamp));
 		await interaction.reply({ embeds: [createEmbed(currentTimestamp)] });
 	}		
 }	

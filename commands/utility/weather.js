@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 const https = require('https');
-const { weatherAPIKey } = require('./resources/apikeys.json');
+const { weatherAPIKey } = require('../../resources/apikeys.json');
 
 function getLatLon(city, state){
 	let geocodehttp = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},US&limit=1&appid=${weatherAPIKey}`;

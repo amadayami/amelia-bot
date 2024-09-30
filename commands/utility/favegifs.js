@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const fs = require('fs');
+const favegifsfile = './resources/favoritegifs.json';
 
 const isValidUrl = urlString=> {
     var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
@@ -12,7 +13,7 @@ const isValidUrl = urlString=> {
 }
 
 function getJSONData(){
-	let rawData = fs.readFileSync('./commands/utility/resources/favoritegifs.json');
+	let rawData = fs.readFileSync(favegifsfile);
 	let gifData = JSON.parse(rawData);
 	return gifData;
 }
@@ -66,7 +67,7 @@ function updateGifs(user, gifName, gifLink){
 		userGifs[gifName] = gifLink;
 	}
 	let updata = JSON.stringify(gifData);
-	fs.writeFileSync('./commands/utility/resources/favoritegifs.json', updata);
+	fs.writeFileSync(favegifsfile, updata);
 }
 			
 module.exports = {

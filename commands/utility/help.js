@@ -5,7 +5,7 @@ function createHelpEmbed(){
 		.setTitle('Commands List')
 		.setDescription('Everything I can do!')
 		.addFields(
-			{ name: '/cat', value; 'Gets a random gif of a cat' },
+			{ name: '/cat', value: 'Gets a random gif of a cat' },
 			{ name: '/countdown', value: 'Creates a countdown to an event' },
 			{ name: '/genshin', value: 'Gets time of next patch' },
 			{ name: '/genshinmats', value: 'Gets talent materials for the day or a given character' },

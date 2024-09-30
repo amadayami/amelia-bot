@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { tenorAPIKey } = require('./resources/apikeys.json');
+const { tenorAPIKey } = require('../../resources/apikeys.json');
 
 const Tenor = require("tenorjs").client({
 	"Key": tenorAPIKey,

@@ -3,7 +3,6 @@ const { SlashCommandBuilder } = require('discord.js');
 function translate(phrase){
 	let translated = '';
 	let toTranslateArr = phrase.split(' ');
-	console.log(toTranslateArr);
 	for(let i = 0; i < toTranslateArr.length; i++){
 		translated += translateWord(toTranslateArr[i]);
 		if(i != toTranslateArr.length - 1) translated += " ";
@@ -32,7 +31,7 @@ function translateWord(word){
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('translate')
-	.setDescription('Translates into Werewolf')
+	.setDescription('Translates into kitty')
 	.addStringOption(option => 
 		option
 			.setName('phrase')

@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 const bonkgif = "https://media1.tenor.com/m/-OtjAkp4Sa8AAAAC/not-mine.gif";
-const bonktally = './commands/utility/resources/bonktally.json';
+const bonktally = './resources/bonktally.json';
 
 function createBonkEmbed(bonker, bonkee, bonkC){
 	const bonkEmbed = new EmbedBuilder()

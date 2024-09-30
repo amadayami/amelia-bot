@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder, ComponentType } = require('discord.js');
 const fs = require('fs');
+const talentfile = './resources/talentmaterials.json';
 
 const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
@@ -20,7 +21,7 @@ function createMatEmbed(day){
 function findDailyMats(day){
 	console.log("today: " + day);
 	let objArr = [];
-	let rawdata = fs.readFileSync('./commands/utility/resources/talentmaterials.json');
+	let rawdata = fs.readFileSync(talentfile);
 	let materials = JSON.parse(rawdata);
 	for(const [key, obj] of Object.entries(materials)){
 		for(availableDay of obj["availability"]){
@@ -29,7 +30,6 @@ function findDailyMats(day){
 			}
 		}
 	}
-	console.log(objArr);
 	return objArr;
 }
 
@@ -45,7 +45,7 @@ function humanize(arr){
 }
 
 function findCharacterMats(name){
-	let rawdata = fs.readFileSync('./commands/utility/resources/talentmaterials.json');
+	let rawdata = fs.readFileSync(talentfile);
 	let materials = JSON.parse(rawdata);
 	for(const [key, obj] of Object.entries(materials)){
 		for(character of obj["characters"]){
