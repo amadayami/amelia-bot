@@ -40,7 +40,7 @@ module.exports = {
 		const guild = interaction.member.guild;
 		const guildMember = await guild.members.fetch(interaction.user.id);
 		if(!guildMember.roles.cache.some(role => role.id === mod)){
-			await interaction.reply({ content: "must be an admin or mod to warn another member", ephemeral: true });
+			await interaction.reply({ content: "must be a mod to get user warnings", ephemeral: true });
 			return;
 		}
 		
