@@ -37,6 +37,13 @@ module.exports = {
 			
 			
 	async execute(interaction) {
+		const guild = interaction.member.guild;
+		const guildMember = await guild.members.fetch(interaction.user.id);
+		if(!guildMember.roles.cache.some(role => role.id === mod)){
+			await interaction.reply({ content: "must be an admin or mod to warn another member", ephemeral: true });
+			return;
+		}
+		
 		const user = interaction.options.getUser('user');
 		let resp = retrieveData(user);
 		if(resp === 0){
