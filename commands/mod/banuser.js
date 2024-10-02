@@ -73,7 +73,7 @@ module.exports = {
 			if(confirmation === "y"){
 				await m.reply({ content: `banning ${bannedUserName} now`});
 				updateBanLog(Math.floor(Date.now()/1000), bUser, reason);
-				await bUser.send(`you have been banned from ${guild.name} for the following reason: \n ${reason}`);
+				await bUser.send(`you have been banned from server **${guild.name}** for the following reason: \n ${reason}`);
 				bGuildMember.ban();
 			}
 			else{

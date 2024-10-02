@@ -115,7 +115,7 @@ module.exports = {
 			if(confirmation === "y"){
 				await m.reply({ content: `sending warning now`});
 				updateWarningLog(Math.floor(Date.now()/1000), warnedUser, reason);
-				warnedUser.send(`you have received a warning from ${interaction.member.guild.name} for the following reason: \n ${reason}`);
+				warnedUser.send(`you have received a warning from server **${interaction.member.guild.name}** for the following reason: \n ${reason}`);
 			}
 			else{
 				await m.reply({ content: "cancelling"});

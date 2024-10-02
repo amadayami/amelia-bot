@@ -73,7 +73,7 @@ module.exports = {
 			if(confirmation === "y"){
 				await m.reply({ content: `kicking ${kickedUserName} now`});
 				updateKickLog(Math.floor(Date.now()/1000), kUser, reason);
-				await kUser.send(`you have been kicked from ${guild.name} for the following reason: \n ${reason}`);
+				await kUser.send(`you have been kicked from server **${guild.name}** for the following reason: \n ${reason}`);
 				kGuildMember.kick();
 			}
 			else{
