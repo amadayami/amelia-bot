@@ -43,7 +43,7 @@ function updateWarningLog(timestamp, userID, reason){
 		let wcode = parseInt(w[w.length-1]) + 1;
 		userWarnings[wcode] = {
 			timestamp: timestamp,
-			reason, reason
+			reason: reason
 		}
 	}
 	else {

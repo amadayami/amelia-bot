@@ -4,7 +4,7 @@ const { mod } = require('../../resources/roleids.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('timeout')
-	.setDescription('timeouts another user and ')
+	.setDescription('timeouts another user')
 	.addUserOption(option =>
 		option
 			.setName('user')
@@ -74,6 +74,6 @@ module.exports = {
 				console.log("time machine broke");
 		}
 		
-		await interaction.reply({ content: `${tUser} You have been timed out for ${time} for the following reason: ${reason}`, ephemeral: true });
+		await interaction.reply({ content: `${tUser} you have been timed out for ${time} for the following reason: ${reason}`});
 	}		
 }	
