@@ -1,12 +1,25 @@
 const { SlashCommandBuilder } = require('discord.js');
 const fs = require('fs');
-const { admin, mod } = require('../../resources/roleids.json');
+const { mod } = require('../../resources/roleids.json');
 const gifsfile = './resources/favoritegifs.json';
 
 function getJSONData(){
 	let rawData = fs.readFileSync(gifsfile);
 	let gifData = JSON.parse(rawData);
 	return gifData;
+}
+
+function getAllGifNames(gifUser){
+	let gifs = getJSONData();
+	let userGifs = gifs[gifUser];
+	if(userGifs === undefined) return "No gifs found for user.";
+	let keys = Object.keys(userGifs);
+	let nameStr = "";
+	for(let i = 0; i < keys.length; i++){
+		nameStr += keys[i];
+		if(i !== keys.length - 1) nameStr += ',';
+	}
+	return nameStr;
 }
 
 function checkGifs(user, gifName){
@@ -34,18 +47,18 @@ function removeGif(user, gifName){
 
 module.exports = {
 	data: new SlashCommandBuilder()
-	.setName('cleargif')
-	.setDescription('Removes gif from list')
-	.addStringOption(option => 
-		option
-			.setName('name')
-			.setDescription('the name of the gif to remove')
-			.setRequired(false)
-		)
+	.setName('cleargifmod')
+	.setDescription('Retrieves/removes gif from list of given user')
 	.addUserOption(option =>
 		option
 			.setName('user')
 			.setDescription('the user who added the gif')
+			.setRequired(true)
+		)
+	.addStringOption(option => 
+		option
+			.setName('name')
+			.setDescription('the name of the gif to remove')
 			.setRequired(false)
 		),	
 			
@@ -54,23 +67,25 @@ module.exports = {
 		let user = interaction.user.id;
 		const guildMember = guild.members.cache.get(user);
 		
-		const gifName = interaction.options.getString('name');
+		const gifName = interaction.options.getString('name') ?? 'noname';
 		const gifUser = interaction.options.getUser('user');
 		
-		if(gifUser !== null){
-			if(!guildMember.roles.cache.some(role => parseInt(role.id) === admin)){
-				await interaction.reply({ content: "must be an admin to delete other users' gifs", ephemeral: true });
-				return;
-			}
-			console.log(`admin ${interaction.user.username} removing gif from user ${gifUser.username} list`);
-			user = gifUser.id;
+		if(!guildMember.roles.cache.some(role => role.id === mod)){
+			await interaction.reply({ content: "must be a mod to delete other users' gifs", ephemeral: true });
+			return;
+		}
+		
+		if(gifName === 'noname'){
+			console.log(gifUser);
+			await interaction.reply({ content: `All saved gif names for ${gifUser.username}: ${getAllGifNames(gifUser.id)}`, ephemeral: true });
+			return;
 		}
 		
 		//check if gif exists on user list
 		//confirm removal
 		
-		if(checkGifs(user, gifName) === 0){
-			await interaction.reply({ content: "gif not found :(", ephemeral: true });
+		if(checkGifs(gifUser.id, gifName) === 0){
+			await interaction.reply({ content: "gif not found", ephemeral: true });
 		}
 		else {
 			await interaction.reply({ content: `${gifName} found in list`, ephemeral: true });
@@ -85,7 +100,7 @@ module.exports = {
 				let confirmation = m.content.toLowerCase();
 				console.log("confirmation message: " + confirmation);
 				if(confirmation === "yes" || confirmation === "y" || confirmation === "ye"){
-					await removeGif(user, gifName);
+					await removeGif(gifUser.id, gifName);
 					await m.reply({ content: `removed ${gifName} from gif list`, ephemeral: true });
 				}
 				else{
