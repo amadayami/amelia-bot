@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
+//can change this to whatever gif/image link you wish!
 const bonkgif = "https://media1.tenor.com/m/-OtjAkp4Sa8AAAAC/not-mine.gif";
 const bonktally = './resources/bonktally.json';
 
