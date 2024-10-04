@@ -11,6 +11,7 @@ const verboseCommands = {
 	"math": "I perform the problem that you provide to me. I can only perform basic arithmetic (including parentheses and decimals) since I am a cat.",
 	"randomgenshin": "I display a random world boss, trounce domain, team of four characters, element, and weapon type.",
 	"randomgif": "I fetch a random gif based on a given keyword. I am not responsible for any strange or offensive gifs that I find. I am a cat and do not know what these things are.",
+	"reportuser": "I will send a report for another user to any mods in the server.",
 	"thread": "I create a new thread with the name that you provide me. The thread will be attached to whatever channel you use this command in.",
 	"translate": "I translate whatever phrase you give me into cat. Please note that this is for fun and other cats won't understand you.",
 	"weather": "I fetch the current weather data from Open Weather. The location you provide me must be in city,state format or I can't read it, and I can only search in the US."
@@ -31,6 +32,7 @@ function createHelpEmbed(){
 			{ name: '/math', value: 'Does basic arithmetic (supports parentheses and decimals)' },
 			{ name: '/randomgenshin', value: 'Gets a random world boss, trounce domain, team, element, and weapon' },
 			{ name: '/randomgif', value: 'Gets a random gif based on a given keyword' },
+			{ name: '/reportuser', value: 'Sends a report about another user to mods' },
 			{ name: '/thread', value: 'Creates a thread with a given name' },
 			{ name: '/translate', value: 'Translates a given phrase into cat' },
 			{ name: '/weather', value: 'Gets current weather data for given location (US states only)' }
