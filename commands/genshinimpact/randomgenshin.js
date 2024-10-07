@@ -43,11 +43,14 @@ function getElement(arr){
 }
 
 function getElements(arr, len){
-	let elements = [];
+	let elementsArr = [];
 	for(let i = 0; i < len; i++){
-		elements.push(arr[Math.floor(Math.random() * arr.length)]);
+		let e = arr[Math.floor(Math.random() * arr.length)];
+		let ei = arr.indexOf(e);
+		arr.splice(ei, 1);
+		elementsArr.push(e);
 	}
-	return elements;
+	return elementsArr;
 }
 	
 module.exports = {
