@@ -38,7 +38,22 @@ client.on('ready', () => {
 
 
 client.on(Events.MessageCreate, async message => {
+	if(message.author.bot) return;
+	let mConNormal = message.content.toLowerCase();
+	if(message.mentions.has(client.user.id)){
+		let memberName = message.member.nickname === null ? message.member.user.username : message.member.nickname;
+		await message.reply(`meow hi ${memberName} 🐱 i am a cat and have no reading comprehension meow`);
+	}
 	
+	try{
+		if(mConNormal.includes("cat") || mConNormal.includes("kitty")){
+			await message.react("🐱");
+		}
+	}
+	catch(e){
+		console.log("error with reacting to message, message content: " + mConNormal);
+		console.error(e);
+	}
 });
 
 client.on(Events.InteractionCreate, async interaction => {
