@@ -4,7 +4,7 @@ const verboseCommands = {
 	"bonk": "I bonk the provided user and keeps a tally of their bonks.",
 	"cat": "I fetch a random gif of a cat from Tenor.",
 	"cleargif": "I remove the provided gif from your saved gifs list. If you do not provide a gif name, I display the list of all gif names you have saved.",
-	"countdown": "I fetch a countdown that has previously been saved by a user. If I do not find one by the provided name, I prompt you for a date (m d, y hh:mm OR mm-dd-yyyy hh:mm format) and save it for later.",
+	"countdown": "I fetch a countdown that has previously been saved by a user. If I do not find one by the provided name, I prompt you for a date (m d, y hh:mm OR mm-dd-yyyy hh:mm format OR month d, y hh:mm) and save it for later.",
 	"favegifs": "I fetch a gif from your personal set of gifs. I prompt you for the name and a link. If you provide just the name, I check the data based on the name. If you provide both, I save the link under the provided name (this also updates the gif if previously saved under the provided name). You can only have 50 saved gifs at a time.",
 	"genshin": "I display the date of the next patch of Genshin Impact, time until that day, and the current banner half.",
 	"genshinmats": "I display the talent materials that can be farmed today. If you provide the name of a specific character, then I display the days you can farm for their talent materials.",

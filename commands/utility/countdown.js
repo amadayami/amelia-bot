@@ -32,6 +32,24 @@ function checkCDs(name){
 	return 0;
 }
 
+function formatCheck(input){
+	let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+	let regex1 = new RegExp("^\\d\\d-\\d\\d-\\d\\d\\d\\d \\d\\d:\\d\\d$");
+	let regex2 = new RegExp("^\\d{1,2} \\d{1,2},{0,1} \\d{4} \\d\\d:\\d\\d$");
+	let regex3 = new RegExp("^[a-z]+ \\d{1,2},{0,1} \\d{4} \\d\\d:\\d\\d$"); 
+	let startsWithLetters = new RegExp("^[a-z]+");
+	
+	if(regex1.test(input) || regex2.test(input)) return input;
+	if(regex3.test(input)){
+		const inputArray = input.split(" ");
+		let monthDigit = months.indexOf(inputArray[0].toLowerCase()) + 1;
+		if(monthDigit < 1) return -1;
+		inputArray[0] = monthDigit;
+		return inputArray.join(" ");
+	}
+	return -1;
+}
+
 function updateCDs(name, timestamp){
 	let rawdata = fs.readFileSync(countdownsfile);
 	let countdowns = JSON.parse(rawdata);
@@ -75,11 +93,11 @@ module.exports = {
 			collector.on('collect', async (m) => {
 				collector.stop();
 				console.log(m.content);
-				let convertedDate = getTimestamp(m.content);
-				if(convertedDate === NaN || convertedDate < Math.floor(Date.now()/1000)){
+				if(formatCheck(m.content) == -1){
 					await m.reply({ content: "invalid date" });
 				}
 				else {
+					let convertedDate = getTimestamp(m.content);
 					await updateCDs(cdName, convertedDate);
 					await m.reply({ embeds: [createCDEmbed(cdName, convertedDate)] });
 				}
